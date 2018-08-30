@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.t9l.androidkotlindemo.avd.AnimationActivity
+import com.t9l.androidkotlindemo.retrofitDemo.RetrofitDemoActivity
 import com.t9l.androidkotlindemo.uberUX.UberUxActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -67,8 +68,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_avd -> {
                 startActivity(Intent(this, AnimationActivity::class.java))
             }
-            R.id.nav_slideshow -> {
-
+            R.id.nav_retrofit_demo -> {
+                startActivity(Intent(this, RetrofitDemoActivity::class.java))
             }
             R.id.nav_manage -> {
 
