@@ -12,6 +12,7 @@ import android.view.MenuItem
 import com.t9l.androidkotlindemo.avd.AnimationActivity
 import com.t9l.androidkotlindemo.retrofitDemo.RetrofitDemoActivity
 import com.t9l.androidkotlindemo.uberUX.UberUxActivity
+import com.t9l.androidkotlindemo.userLocation.UserLocationActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -71,8 +72,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_retrofit_demo -> {
                 startActivity(Intent(this, RetrofitDemoActivity::class.java))
             }
-            R.id.nav_manage -> {
-
+            R.id.nav_location -> {
+                startActivity(Intent(this, UserLocationActivity::class.java))
             }
             R.id.nav_share -> {
 
