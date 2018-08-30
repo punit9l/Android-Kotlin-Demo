@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.t9l.androidkotlindemo.avd.AnimationActivity
 import com.t9l.androidkotlindemo.uberUX.UberUxActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
@@ -63,8 +64,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_uber_ux -> {
                 startActivity(Intent(this, UberUxActivity::class.java))
             }
-            R.id.nav_gallery -> {
-
+            R.id.nav_avd -> {
+                startActivity(Intent(this, AnimationActivity::class.java))
             }
             R.id.nav_slideshow -> {
 

@@ -9,9 +9,9 @@
             android:icon="@drawable/ic_directions_car_black_24dp"
             android:title="Uber UX" />
         <item
-            android:id="@+id/nav_gallery"
+            android:id="@+id/nav_avd"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:title="Animation" />
         <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
