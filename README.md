@@ -1,6 +1,12 @@
 # Android Kotlin Demo
 
+### Table of Contents
+---
+1. [UBER UX](https://github.com/punit9l/Android-Kotlin-Demo#1-uber-ux)
+2. [Animation](https://github.com/punit9l/Android-Kotlin-Demo#2-animation)
+3. [Retrofit Demo](https://github.com/punit9l/Android-Kotlin-Demo#3-retrofit-demo)
 
+---
 
 ### 1. UBER UX
 
