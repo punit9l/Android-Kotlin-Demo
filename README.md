@@ -4,5 +4,4 @@
 
 ### 1. UBER UX
 
-
-![UBER UX](https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots//uber_ux.gif =250x)
+<img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots//uber_ux.gif" width=300></img> 
