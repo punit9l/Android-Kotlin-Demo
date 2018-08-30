@@ -4,19 +4,24 @@
 
 ### 1. UBER UX
 
-<img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots/uber_ux.gif" width=300></img>
-
 See code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/uberUX)
 
+<img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots/uber_ux.gif" width=300></img>
+
+---
 
 ### 2. Animation
 
-<img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots/heart_loading.gif" width=300></img>
-
 See code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/avd)
 
+<img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots/heart_loading.gif" width=300></img>
+
+---
 
 ### 3. Retrofit Demo
+
+See code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/retrofitDemo)
+
 
 build.graddle (app)
 
@@ -88,3 +93,4 @@ class RetrofitDemoActivity : AppCompatActivity() {
     }
 }
 ```
+---
