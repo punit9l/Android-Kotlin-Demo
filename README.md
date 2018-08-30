@@ -89,7 +89,15 @@ class RetrofitDemoActivity : AppCompatActivity() {
     }
 
     private val mObserver: Observer<List<Repo>> = object : Observer<List<Repo>> {
-        // override methods
+    	override fun onSubscribe(d: Disposable) {
+            disposable = d
+        }
+        // more override methods
+    }
+
+    override fun onStop() {
+        super.onStop()
+        disposable?.dispose()
     }
 }
 ```

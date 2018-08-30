@@ -60,4 +60,9 @@ class RetrofitDemoActivity : AppCompatActivity() {
         Log.d("RetrofitDemoActivity", message)
     }
 
+    override fun onStop() {
+        super.onStop()
+        disposable?.dispose()
+    }
+
 }
