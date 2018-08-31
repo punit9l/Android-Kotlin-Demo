@@ -33,8 +33,11 @@
             android:name=".retrofitDemo.RetrofitDemoActivity"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".userLocation.UserLocationActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:parentActivityName=".MainActivity"
-            android:name=".userLocation.UserLocationActivity"/>
+            android:name=".sensors.AccelerometerActivity"/>
     </application>
 
 </manifest>

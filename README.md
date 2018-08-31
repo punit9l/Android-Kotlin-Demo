@@ -6,12 +6,13 @@
 2. [Animation](https://github.com/punit9l/Android-Kotlin-Demo#2-animation)
 3. [Retrofit Demo](https://github.com/punit9l/Android-Kotlin-Demo#3-retrofit-demo)
 4. [Location Demo](https://github.com/punit9l/Android-Kotlin-Demo#4-location-demo)
+5. [Accelerometer Demo](https://github.com/punit9l/Android-Kotlin-Demo#5-accelerometer-demo)
 
 ---
 
 ### 1. UBER UX
 
-See code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/uberUX)
+See full code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/uberUX)
 
 <img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots/uber_ux.gif" width=300></img>
 
@@ -19,7 +20,7 @@ See code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/s
 
 ### 2. Animation
 
-See code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/avd)
+See full code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/avd)
 
 <img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots/heart_loading.gif" width=300></img>
 
@@ -27,7 +28,7 @@ See code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/s
 
 ### 3. Retrofit Demo
 
-See code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/retrofitDemo)
+See full code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/retrofitDemo)
 
 
 build.graddle (app)
@@ -221,3 +222,63 @@ class UserLocationActivity : AppCompatActivity() {
 }
 ```
 
+---
+
+### 5. Accelerometer Demo
+
+See full code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/sensors)
+
+<img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots/accelerometer.gif" width=300></img>
+
+AccelerometerActivity.kt
+
+```kotlin
+class AccelerometerActivity : AppCompatActivity() {
+
+    private lateinit var mSensorManager: SensorManager
+    private val mAccelerometerReading = FloatArray(3)
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        
+        // ...
+
+        mSensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+
+        // Register Accelerometer Sensor
+        registerAccelerometer()
+    }
+
+    private fun registerAccelerometer() {
+        mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)?.also { accelerometer ->
+            mSensorManager.registerListener(
+                    mAccelerometerSensorListener,
+                    accelerometer,
+                    SensorManager.SENSOR_DELAY_NORMAL,
+                    SensorManager.SENSOR_DELAY_UI
+            )
+        }
+    }
+
+    private val mAccelerometerSensorListener = object : SensorEventListener {
+        
+        // ...
+        // overrides
+
+        override fun onSensorChanged(event: SensorEvent) {
+            if (event.sensor.type == Sensor.TYPE_ACCELEROMETER) {
+                System.arraycopy(event.values, 0, mAccelerometerReading, 0, mAccelerometerReading.size)
+                // Do something with mAccelerometerReading
+                // TODO
+            }
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        // Unregister sensor listener
+        mSensorManager.unregisterListener(mAccelerometerSensorListener)
+    }
+}
+```
+---

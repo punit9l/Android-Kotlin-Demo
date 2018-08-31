@@ -8,5 +8,8 @@
     <string name="action_settings">Settings</string>
     <string name="latitude">Latitude : %1$f</string>
     <string name="longitude">Longitude : %1$f</string>
+    <string name="azimuth">Azimuth (degrees of rotation about the -z axis) : %1$f</string>
+    <string name="pitch">Pitch (degrees of rotation about the x axis) : %1$f</string>
+    <string name="roll">Roll (degrees of rotation about the y axis) : %1$f</string>
     <string name="location_message">Your pickup point isn\'t showing up on the map. If you turn on your phone\'s location service, the app will find a pont for you.</string>
 </resources>
