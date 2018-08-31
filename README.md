@@ -8,6 +8,7 @@
 4. [Location Demo](https://github.com/punit9l/Android-Kotlin-Demo#4-location-demo)
 5. [Accelerometer Demo](https://github.com/punit9l/Android-Kotlin-Demo#5-accelerometer-demo)
 6. [Custom Alert Dialog](https://github.com/punit9l/Android-Kotlin-Demo#6-custom-alert-dialog)
+7. [RecyclerView Demo](https://github.com/punit9l/Android-Kotlin-Demo#7-recyclerview-demo)
 
 ---
 
@@ -389,6 +390,108 @@ class CustomAlertActivity : AppCompatActivity() {
 }
 ```
 
+[Back to TOC](https://github.com/punit9l/Android-Kotlin-Demo#table-of-contents)
+
+---
+
+### 7. RecyclerView Demo
+
+See full code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/recyclerView)
+
+<img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots/recycler_view.png" width=300></img>
+
+custom_item.xml
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textViewItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:padding="@dimen/fab_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
+```
+
+CustomItem.kt
+
+```kotlin
+class CustomItem (
+        val id: Int,
+        val name: String
+)
+```
+
+CustomAdapter.kt
+
+```kotlin
+class CustomAdapter(
+        private val mutableList: MutableList<CustomItem>
+): RecyclerView.Adapter<CustomAdapter.CustomViewHolder>() {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, p1: Int): CustomViewHolder {
+        val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.custom_item, viewGroup, false)
+        return CustomViewHolder(view)
+    }
+
+    override fun getItemCount(): Int {
+        return mutableList.size
+    }
+
+    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
+        holder.bindItem(mutableList[position])
+    }
+
+    class CustomViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bindItem(item: CustomItem) {
+            itemView.textViewItem.text = item.name
+        }
+
+    }
+}
+```
+
+RecyclerActivity.kt
+
+```kotlin
+class RecyclerActivity : AppCompatActivity() {
+
+    private lateinit var mAdapter: CustomAdapter
+    private val mutableList: MutableList<CustomItem> = mutableListOf()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        
+        // ...
+
+        mAdapter = CustomAdapter(mutableList)
+
+        val layoutManager = LinearLayoutManager(this)
+
+        recyclerView.adapter = mAdapter
+        recyclerView.layoutManager = layoutManager
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        for (index in 1..100) {
+            mutableList.add(CustomItem(index, "Item $index"))
+            mAdapter.notifyDataSetChanged()
+        }
+    }
+}
+```
 [Back to TOC](https://github.com/punit9l/Android-Kotlin-Demo#table-of-contents)
 
 ---

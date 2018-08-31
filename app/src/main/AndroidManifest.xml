@@ -39,8 +39,11 @@
             android:name=".sensors.AccelerometerActivity"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".customAlertDialog.CustomAlertActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:parentActivityName=".MainActivity"
-            android:name=".customAlertDialog.CustomAlertActivity"/>
+            android:name=".recyclerView.RecyclerActivity"/>
     </application>
 
 </manifest>

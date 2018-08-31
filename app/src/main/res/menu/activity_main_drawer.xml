@@ -30,6 +30,11 @@
             android:icon="@drawable/ic_menu_send"
             android:title="Custom Alert Dialog" />
 
+        <item
+            android:id="@+id/nav_recycler_view"
+            android:icon="@drawable/ic_menu_send"
+            android:title="RecyclerView" />
+
     </group>
 
 </menu>
