@@ -16,6 +16,8 @@ See full code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/
 
 <img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots/uber_ux.gif" width=300></img>
 
+[Back to TOC](https://github.com/punit9l/Android-Kotlin-Demo#table-of-contents)
+
 ---
 
 ### 2. Animation
@@ -23,6 +25,8 @@ See full code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/
 See full code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/avd)
 
 <img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots/heart_loading.gif" width=300></img>
+
+[Back to TOC](https://github.com/punit9l/Android-Kotlin-Demo#table-of-contents)
 
 ---
 
@@ -109,6 +113,9 @@ class RetrofitDemoActivity : AppCompatActivity() {
     }
 }
 ```
+
+[Back to TOC](https://github.com/punit9l/Android-Kotlin-Demo#table-of-contents)
+
 ---
 
 ### 4. Location Demo
@@ -222,6 +229,8 @@ class UserLocationActivity : AppCompatActivity() {
 }
 ```
 
+[Back to TOC](https://github.com/punit9l/Android-Kotlin-Demo#table-of-contents)
+
 ---
 
 ### 5. Accelerometer Demo
@@ -282,3 +291,5 @@ class AccelerometerActivity : AppCompatActivity() {
 }
 ```
 ---
+
+[Back to TOC](https://github.com/punit9l/Android-Kotlin-Demo#table-of-contents)
