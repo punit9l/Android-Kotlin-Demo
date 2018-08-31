@@ -298,7 +298,7 @@ class AccelerometerActivity : AppCompatActivity() {
 
 ---
 
-### 6. UBER UX
+### 6. Custom Alert Dialog
 
 See full code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/customAlertDialog)
 
