@@ -7,6 +7,7 @@
 3. [Retrofit Demo](https://github.com/punit9l/Android-Kotlin-Demo#3-retrofit-demo)
 4. [Location Demo](https://github.com/punit9l/Android-Kotlin-Demo#4-location-demo)
 5. [Accelerometer Demo](https://github.com/punit9l/Android-Kotlin-Demo#5-accelerometer-demo)
+6. [Custom Alert Dialog](https://github.com/punit9l/Android-Kotlin-Demo#6-custom-alert-dialog)
 
 ---
 
@@ -293,3 +294,101 @@ class AccelerometerActivity : AppCompatActivity() {
 ---
 
 [Back to TOC](https://github.com/punit9l/Android-Kotlin-Demo#table-of-contents)
+
+
+---
+
+### 6. UBER UX
+
+See full code [here](https://github.com/punit9l/Android-Kotlin-Demo/tree/master/app/src/main/java/com/t9l/androidkotlindemo/customAlertDialog)
+
+<img src="https://github.com/punit9l/Android-Kotlin-Demo/raw/master/screen_shots/custom_dialog.png" width=300></img>
+
+rounded.xml
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <corners android:radius="15dp" />
+    <solid android:color="#FFFFFF" />
+</shape>
+```
+
+alert_dialog.xml
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="32dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:elevation="1dp"
+        app:srcCompat="@drawable/quotes" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
+        android:background="@drawable/rounded"
+        android:elevation="0dp"
+        android:padding="32dp"
+        android:text="@string/dummy_text"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        app:srcCompat="@drawable/cross_copy" />
+</LinearLayout>
+```
+
+CustomAlertActivity.kt
+
+```kotlin
+class CustomAlertActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        
+        // ...
+
+        buttonAlert.setOnClickListener {
+            val dialog = createCustomDialog(this)
+            dialog.show()
+        }
+    }
+
+    private fun createCustomDialog(context: Context): AlertDialog {
+
+        val builder = AlertDialog.Builder(context)
+        // Get the layout inflater
+        val inflater = layoutInflater
+        val view = inflater.inflate(R.layout.alert_dialog, null)
+        // Inflate and set the layout for the dialog
+        builder.setView(view)
+
+        val dialog = builder.create()
+        dialog.window!!.setBackgroundDrawableResource(android.R.color.transparent)
+        view.imageButton.setOnClickListener { dialog.dismiss() }
+        return dialog
+    }
+}
+```
+
+[Back to TOC](https://github.com/punit9l/Android-Kotlin-Demo#table-of-contents)
+
+---

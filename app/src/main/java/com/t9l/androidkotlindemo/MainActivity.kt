@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import com.t9l.androidkotlindemo.avd.AnimationActivity
+import com.t9l.androidkotlindemo.customAlertDialog.CustomAlertActivity
 import com.t9l.androidkotlindemo.retrofitDemo.RetrofitDemoActivity
 import com.t9l.androidkotlindemo.sensors.AccelerometerActivity
 import com.t9l.androidkotlindemo.uberUX.UberUxActivity
@@ -79,8 +80,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_accelerometer -> {
                 startActivity(Intent(this, AccelerometerActivity::class.java))
             }
-            R.id.nav_send -> {
-
+            R.id.nav_custom_alert -> {
+                startActivity(Intent(this, CustomAlertActivity::class.java))
             }
         }
 
