@@ -1,8 +1,8 @@
 package com.t9l.androidkotlindemo
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -16,19 +16,25 @@ import com.t9l.androidkotlindemo.retrofitDemo.RetrofitDemoActivity
 import com.t9l.androidkotlindemo.sensors.AccelerometerActivity
 import com.t9l.androidkotlindemo.uberUX.UberUxActivity
 import com.t9l.androidkotlindemo.userLocation.UserLocationActivity
+import com.t9l.playernotification.NotificationService
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
+
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    companion object {
+        private const val OVERLAY_PERMISSION_REQ = 123
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+        fab.setOnClickListener { _ ->
+            val intent = Intent(this, NotificationService::class.java)
+            startService(intent)
         }
 
         val toggle = ActionBarDrawerToggle(
@@ -37,6 +43,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+    }
+
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == OVERLAY_PERMISSION_REQ) {
+            if (resultCode == Activity.RESULT_OK) {
+                val intent = Intent(this, NotificationService::class.java)
+                startService(intent)
+            }
+        }
     }
 
     override fun onBackPressed() {

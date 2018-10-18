@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.t9l.playernotification">
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACTION_HEADSET_PLUG" />
+
+    <application>
+        <activity android:name="com.t9l.playernotification.FullPlayerActivity" />
+
+        <service
+            android:name="com.t9l.playernotification.NotificationService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <activity android:name="com.t9l.playernotification.CurrentlyPlayingActivity"/>
+    </application>
+
+</manifest>
